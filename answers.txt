@@ -1,0 +1,22 @@
+1. Explain in detail the workings of a dynamic array:
+* What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+Runtime of O(1) or constant time for the front or back of an array because they can be accessed instantly as their index positions are known (array[0], or array[len(array - 1)]).
+
+Runtime for the rest of the array, if the index is unknown, is O(n) or linear time, in worst case scenario, as the list has to be traversed one at a time until finding the desired value.
+
+* What is the worse case scenario if you try to extend the storage size of a dynamic array?
+
+Worst case for doubling a dynamic array would be O(n) as after doubling the size of the new array (compared to old one) would one have to linearly copy each value from the old array into the new one by traversing the entire list.
+
+2. Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+
+In a blockchain each block represents a node which contains information pertinent to its chain and always includes:
+- its unique index, a timestamp, commonly transactions or ledger, proof of work and the previous hash which chains it to the previous block.
+
+The chain is then made up of hashes which are directly correlated to the information stored within the last block. This would mean that changing anything in the previous block would alter its hash and no longer coincide with the following block's hash, therefore breaking the chain. 
+ 
+3. Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+
+Proof of work is a complex task which which requires finding a particular hash (which are randomized.) Once the a solution is found it is presented to the server and run through the proof of work to confirm. Once confirmed, a new block is formed including the confirmed proof and previous' blocks hash, making it impossible to alter the previous block without changing the hash and breaking the chain.
+The most probable attack would be to change the last block's information, and then submit proof for the next block before anyone else mines it. Since the longest chain is automatically seen as the correct one, an attacker would have to outrun 51% of the entire network's miners in order to have a chance (which is probabilistically very low.)
