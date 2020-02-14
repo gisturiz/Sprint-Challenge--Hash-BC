@@ -24,10 +24,10 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = 6756097485508234982
+    proof = 908098934503
     #  TODO: Your code here
     while valid_proof(last_proof, proof) is False:
-        proof += 9287346923
+        proof += 93485034
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
